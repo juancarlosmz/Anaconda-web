@@ -1,81 +1,603 @@
-<!doctype html>
-<html lang="es" ng-app="appDemo" >
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía de Anaconda y Label Studio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">   
-</head>
-<body>
-    <header>
-        <h1>Guía de Anaconda y Label Studio</h1>
-        <nav>
-            <ul>
-                <li><a href="#introduccion">Introducción</a></li>
-                <li><a href="#instalacion">Instalación de Anaconda</a></li>
-                <li><a href="#uso">Uso de Label Studio</a></li>
-                <li><a href="#objetivos">Objetivos del Proyecto</a></li>
-                <li><a href="#referencias">Referencias</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="introduccion">
-            <h2>Introducción</h2>
-            <p>Anaconda es una distribución de Python (también de R) que se usa para aplicaciones de ciencia de datos, aprendizaje automático e inteligencia artificial.</p>
-            <img src="img/anaconda_image.png" alt="Anaconda" class="responsive">
-        </section>
-        <section id="instalacion">
-            <h2>Instalación de Anaconda</h2>
-            <ol>
-                <li>Buscar en navegador Anaconda Python.</li>
-                <li>Descargar el programa según el almacenamiento de tu PC y tu sistema operativo (Anaconda o Miniconda).</li>
-                <li>Descomprimir el archivo y darle todo por defecto. Una vez instalado, ejecutar cualquiera de los dos.</li>
-            </ol>
-        </section>
-        <section id="uso">
-            <h2>Uso de Label Studio</h2>
-            <ol>
-                <li>Buscar en el navegador Label Studio.</li>
-                <li>Ingresar y copiar los siguientes comandos.</li>
-                <li>Abrir Anaconda Powershell Prompt y ejecutar los comandos.</li>
-                <li>Configurar el proyecto y las etiquetas necesarias.</li>
-            </ol>
-            <img src="img/label_studio_image.png" alt="Label Studio" class="responsive">
-        </section>
-        <section id="objetivos">
-            <h2>Objetivos del Proyecto</h2>
-            <ul>
-                <li>Segmentar y calcular el área de la hoja de durazno en la imagen.</li>
-                <li>Aislar el objeto del fondo para mejorar la precisión.</li>
-                <li>Automatizar la detección de objetos similares.</li>
-            </ul>
-        </section>
-        <section id="referencias">
-            <h2>Referencias</h2>
-            <p>Rondón, I. (2022). <a href="https://eiposgrados.com/blog-python/que-es-anaconda/" target="_blank">¿Qué es Anaconda?</a></p>
-            <p>HumanSignal. (2024). <a href="https://labelstud.io/guide/get_started" target="_blank">Descripción general de Label Studio.</a></p>
-        </section>
-    </main>
- 
-    <script src="https://code.angularjs.org/1.5.9/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.5.9/angular-route.min.js"></script>
-    <script src="app.js"></script>
-    <script src="controllers.js"></script>
-    <script src="services/products.js"></script>
-    <script src="artyom.js"></script>
-    <script src="artyom.js/build/artyom.window.js"></script>
-    <script src="artyom.js/build/artyom.window.min.js"></script>
-    <script src="js/ihm.js"></script>
-</body>
-<footer>
-  <p>&copy; 2024 Guía de Anaconda y Label Studio. Todos los derechos reservados.</p>
-</footer>
-<script>
-  
-  </script>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Guía de Anaconda y Label Studio</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+    <link href="css/style.css" rel="stylesheet">
+	<link href="color/default.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<!-- Preloader -->
+	<div id="preloader">
+	  <div id="load"></div>
+	</div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <h1>ANACONDA</h1>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#intro">Inicio</a></li>
+        <li><a href="#about">Introducción</a></li>
+		<li><a href="#service">Pasos</a></li>
+		<li><a href="#contact">Proyecto</a></li>
+		<!--
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mas...<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">1</a></li>
+          </ul>
+        </li>
+		-->
+      </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<!-- Section: intro -->
+    <section id="intro" class="intro">
+	
+		<div class="slogan">
+			<h2>INSTALACIÓN <span class="text_color">ANACONDA PYTHON</span> </h2>
+			<h4>Anaconda y Label Studio: Herramientas para Ciencia de Datos y Etiquetado de Imágenes</h4>
+		</div>
+		<div class="page-scroll">
+			<a href="#service" class="btn btn-circle">
+				<i class="fa fa-angle-double-down animated"></i>
+			</a>
+		</div>
+    </section>
+	<!-- /Section: intro -->
+
+	<!-- Section: about -->
+    <section id="about" class="home-section text-center">
+		<div class="heading-about">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="wow bounceInDown" data-wow-delay="0.4s">
+					<div class="section-heading">
+					<h2>Anaconda</h2>
+					<i class="fa fa-2x fa-angle-down"></i>
+
+					</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<hr class="marginbot-50">
+			</div>
+		</div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 col-md-3">
+				<div class="wow bounceInUp" data-wow-delay="0.2s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Buscar Anaconda en el navegador:</h5>
+                        <p class="subtitle">Guía Completa</p>
+                        <div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
+                    </div>
+                </div>
+				</div>
+            </div>
+			<div class="col-xs-6 col-sm-3 col-md-3">
+				<div class="wow bounceInUp" data-wow-delay="0.5s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Anaconda para empresas</h5>
+                        <p class="subtitle">Soluciones y licencias</p>
+                        <div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>
+
+                    </div>
+                </div>
+				</div>
+            </div>
+			<div class="col-xs-6 col-sm-3 col-md-3">
+				<div class="wow bounceInUp" data-wow-delay="0.8s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Introducción a Label Studio</h5>
+                        <p class="subtitle">Etiquetación de Datos</p>
+                        <div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>
+
+                    </div>
+                </div>
+				</div>
+            </div>
+			<div class="col-xs-6 col-sm-3 col-md-3">
+				<div class="wow bounceInUp" data-wow-delay="1s">
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Label Studio</h5>
+                        <p class="subtitle">Instalacion y Configuración Avanzada</p>
+                        <div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive img-circle" /></div>
+
+                    </div>
+                </div>
+				</div>
+            </div>
+        </div>	
+		
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wow fadeIn" data-wow-delay="0.2s">
+					<div class="team card info-card">
+						<div class="card-body">
+							<h5>Anaconda</h5>
+							<p class="subtitle">Gestor de paquetes y entornos para Python.</p>
+							<p>Anaconda es una distribución de Python y R que facilita la gestión de paquetes y entornos. Es especialmente útil para la ciencia de datos, el aprendizaje automático y la computación científica. Con Anaconda, puedes instalar fácilmente bibliotecas y herramientas necesarias para tus proyectos.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wow fadeIn" data-wow-delay="0.5s">
+					<div class="team card info-card">
+						<div class="card-body">
+							<h5>Python</h5>
+							<p class="subtitle">Lenguaje de programación versátil y poderoso.</p>
+							<p>Python es un lenguaje de programación de alto nivel, conocido por su legibilidad y simplicidad. Es ampliamente utilizado en diversas áreas, como desarrollo web, análisis de datos, inteligencia artificial y automatización. Su amplia comunidad y la disponibilidad de bibliotecas lo convierten en una opción popular para desarrolladores y científicos de datos.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wow fadeIn" data-wow-delay="0.8s">
+					<div class="team card info-card">
+						<div class="card-body">
+							<h5>Label Studio</h5>
+							<p class="subtitle">Herramienta de etiquetado de datos flexible.</p>
+							<p>Label Studio es una plataforma de etiquetado de datos que permite a los usuarios crear y gestionar proyectos de etiquetado de manera eficiente. Soporta múltiples tipos de datos, como texto, imágenes y audio, y es ideal para entrenar modelos de aprendizaje automático. Su interfaz intuitiva facilita la colaboración entre equipos y la personalización de flujos de trabajo.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<style>
+		.info-card {
+			background-color: #f9f9f9;
+			border: 1px solid #e0e0e0;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s;
+			margin-bottom: 20px;
+			text-align: left;
+		}
+		
+		.info-card:hover {
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+		
+		.card-body {
+			padding: 20px;
+		}
+		
+		.subtitle {
+			font-weight: bold;
+			color: #555;
+			margin-bottom: 10px;
+		}
+		</style>
+
+
+
+
+		</div>
+
+		
+	</section>
+	<!-- /Section: about -->
+	
+
+	<!-- Section: services -->
+    <section id="service" class="home-section text-center bg-gray">
+		
+		<div class="heading-about">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="wow bounceInDown" data-wow-delay="0.4s">
+					<div class="section-heading">
+					<h2>Pasos para instalar Anaconda:</h2>
+					<i class="fa fa-2x fa-angle-down"></i>
+
+					</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<hr class="marginbot-50">
+			</div>
+		</div>
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+				<div class="wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="img/icons/service-icon-1.png" alt="" />
+					</div>
+					<div class="service-desc">
+						<h5>Buscar Anaconda en el navegador:</h5>
+						<p>Visita el sitio oficial de Anaconda.</p>
+					</div>
+                </div>
+				</div>
+            </div>
+			<div class="col-sm-3 col-md-3">
+				<div class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="img/icons/service-icon-2.png" alt="" />
+					</div>
+					<div class="service-desc">
+						<h5>Descargar el programa:</h5>
+						<p>Elige entre Anaconda o Miniconda, dependiendo de tus necesidades. Anaconda incluye una amplia gama de paquetes, mientras que Miniconda es una versión más ligera.</p>
+					</div>
+                </div>
+				</div>
+            </div>
+			<div class="col-sm-3 col-md-3">
+				<div class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="img/icons/service-icon-3.png" alt="" />
+					</div>
+					<div class="service-desc">
+						<h5>Instalación:</h5>
+						<p>Descomprime el archivo descargado y sigue las instrucciones predeterminadas para la instalación.</p>
+					</div>
+                </div>
+				</div>
+            </div>
+			<div class="col-sm-3 col-md-3">
+				<div class="wow fadeInRight" data-wow-delay="0.2s">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="img/icons/service-icon-4.png" alt="" />
+					</div>
+					<div class="service-desc">
+						<h5>Configuración:</h5>
+						<p>Una vez instalado, puedes abrir Anaconda Powershell Prompt para ejecutar comandos y gestionar tus entornos de trabajo.</p>
+					</div>
+                </div>
+				</div>
+            </div>
+        </div>	
+		
+		
+
+
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wow fadeIn" data-wow-delay="0.2s">
+					<div class="team card install-card">
+						<div class="card-body">
+							<h5>Instalación de Anaconda</h5>
+							<ol>
+								<li>Visita el sitio web oficial de <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda</a>.</li>
+								<li>Descarga el instalador adecuado para tu sistema operativo (Windows, macOS o Linux).</li>
+								<li>Ejecuta el instalador y sigue las instrucciones en pantalla.</li>
+								<li>Selecciona la opción para agregar Anaconda al PATH (opcional pero recomendado).</li>
+								<li>Una vez completada la instalación, abre Anaconda Navigator o la terminal de Anaconda.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wow fadeIn" data-wow-delay="0.5s">
+					<div class="team card install-card">
+						<div class="card-body">
+							<h5>Instalación de Python</h5>
+							<ol>
+								<li>Si ya has instalado Anaconda, Python ya está incluido.</li>
+								<li>Si prefieres instalar Python por separado, visita el sitio web oficial de <a href="https://www.python.org/downloads/" target="_blank">Python</a>.</li>
+								<li>Descarga el instalador para tu sistema operativo.</li>
+								<li>Ejecuta el instalador y asegúrate de marcar la opción "Add Python to PATH".</li>
+								<li>Completa la instalación y verifica la instalación abriendo una terminal y escribiendo <code>python --version</code>.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wow fadeIn" data-wow-delay="0.8s">
+					<div class="team card install-card">
+						<div class="card-body">
+							<h5>Instalación de Label Studio</h5>
+							<ol>
+								<li>Asegúrate de tener Python 3.6 o superior instalado.</li>
+								<li>Abre una terminal o línea de comandos.</li>
+								<li>Ejecuta el siguiente comando para instalar Label Studio:</li>
+								<pre><code>pip install label-studio</code></pre>
+								<li>Una vez completada la instalación, puedes iniciar Label Studio con el siguiente comando:</li>
+								<pre><code>label-studio</code></pre>
+								<li>Accede a Label Studio en tu navegador en <code>http://localhost:8080</code>.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<style>
+		.install-card {
+			background-color: #f0f8ff;
+			border: 1px solid #e0e0e0;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s;
+			margin-bottom: 20px;
+			text-align: left;
+		}
+		
+		.install-card:hover {
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+		
+		.card-body {
+			padding: 20px;
+		}
+		
+		ol {
+			margin-left: 20px;
+		}
+		
+		pre {
+			background-color: #e9ecef;
+			padding: 10px;
+			border-radius: 5px;
+			overflow-x: auto;
+		}
+		</style>
+		
+
+
+
+		</div>
+	</section>
+	<!-- /Section: services -->
+	
+
+	
+
+	<!-- Section: contact -->
+    <section id="contact" class="home-section text-center">
+		<div class="heading-contact">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="wow bounceInDown" data-wow-delay="0.4s">
+					<div class="section-heading">
+					<h2>Crear Proyecto</h2>
+					<i class="fa fa-2x fa-angle-down"></i>
+
+					</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+
+
+
+
+
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="wow fadeIn" data-wow-delay="0.2s">
+						<div class="team card config-card">
+							<div class="card-body">
+								<h5>Configurar el Proyecto</h5>
+								<p>Para comenzar a etiquetar, primero debes crear un nuevo proyecto en Label Studio:</p>
+								<ol>
+									<li>Inicia Label Studio en tu navegador en <code>http://localhost:8080</code>.</li>
+									<li>Haz clic en "Create Project".</li>
+									<li>Ingresa un nombre y una descripción para tu proyecto.</li>
+									<li>Haz clic en "Save" para crear el proyecto.</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="wow fadeIn" data-wow-delay="0.5s">
+						<div class="team card config-card">
+							<div class="card-body">
+								<h5>Seleccionar el Tipo de Etiquetado</h5>
+								<p>Label Studio ofrece varios tipos de etiquetado. Para seleccionar el que mejor se adapte a tu proyecto:</p>
+								<ol>
+									<li>En la página de configuración del proyecto, busca la sección "Labeling Configuration".</li>
+									<li>Selecciona el tipo de tarea que deseas realizar (por ejemplo, <strong>Etiquetado de Texto</strong>, <strong>Etiquetado de Imágenes</strong>, etc.).</li>
+									<li>Configura los parámetros específicos según el tipo de etiquetado seleccionado.</li>
+									<li>Haz clic en "Save" para guardar la configuración.</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="wow fadeIn" data-wow-delay="0.8s">
+						<div class="team card config-card">
+							<div class="card-body">
+								<h5>Agregar Datos para Etiquetar</h5>
+								<p>Una vez que hayas configurado el etiquetado, puedes agregar los datos que deseas etiquetar:</p>
+								<ol>
+									<li>En la página del proyecto, haz clic en "Import Data".</li>
+									<li>Selecciona el método de importación (por ejemplo, cargar archivos o importar desde una URL).</li>
+									<li>Sube tus datos y asegúrate de que estén en el formato correcto.</li>
+									<li>Haz clic en "Import" para agregar los datos al proyecto.</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<style>
+			.config-card {
+				background-color: #f9f9f9;
+				border: 1px solid #e0e0e0;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				transition: box-shadow 0.3s;
+				margin-bottom: 20px;
+				text-align: left;
+			}
+			
+			.config-card:hover {
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			}
+			
+			.card-body {
+				padding: 20px;
+			}
+			
+			ol {
+				margin-left: 20px;
+			}
+			
+			strong {
+				color: #4CAF50; /* Color para resaltar texto importante */
+			}
+			</style>
+
+
+
+
+
+
+
+
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<hr class="marginbot-50">
+			</div>
+		</div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="boxed-grey">
+                <form id="contact-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required="required" /></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Mensaje</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Mensaje"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+                            Enviar</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+		
+		<div class="col-lg-4">
+			<div class="widget-contact">
+				<h5>Contacto</h5>
+				
+				<address>
+				  <abbr title="Phone">P:</abbr> (+51) 926 087 539
+				</address>				
+			
+			</div>	
+		</div>
+    </div>	
+
+		</div>
+	</section>
+	<!-- /Section: contact -->
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="wow shake" data-wow-delay="0.4s">
+					<div class="page-scroll marginbot-30">
+						<a href="#intro" id="totop" class="btn btn-circle">
+							<i class="fa fa-angle-double-up animated"></i>
+						</a>
+					</div>
+					</div>
+					<p>&copy;Copyright 2024</p>
+                    <!-- 
+                        All links in the footer should remain intact. 
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Squadfree
+                    -->
+				</div>
+			</div>	
+		</div>
+	</footer>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>	
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+
+</body>
 
 </html>
